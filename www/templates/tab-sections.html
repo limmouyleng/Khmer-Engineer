@@ -1,16 +1,27 @@
-<ion-view view-title="Sections">
+<ion-pane>
   <ion-content>
-    <ion-list>
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
-        <img ng-src="{{chat.face}}">
-        <h2>{{chat.name}}</h2>
-        <p>{{chat.lastText}}</p>
-        <i class="icon ion-chevron-right icon-accessory"></i>
+      <div class="row responsive-md">
+          <div class="col col-25">
+              <img ng-src="img/plumbing.png" width="30%" />
+          </div>
+          <div class="col col-25">
+              <img ng-src="img/fire_protection.png" width="30%" />
+          </div>
+          <div class="col col-25">
+              <img ng-src="img/electrical.png" width="30%" />
+          </div>
+          </div>
 
-        <ion-option-button class="button-assertive" ng-click="remove(chat)">
-          Delete
-        </ion-option-button>
-      </ion-item>
-    </ion-list>
+      <div class="row responsive-md">
+          <div class="col col-25">
+              <img ng-src="img/architecture.png" width="30%" />
+          </div>
+          <div class="col col-25">
+              <img ng-src="img/civil_engineer.png" width="30%" />
+          </div>
+          <div class="col col-25">
+              <img ng-src="img/plumbing.png" width="30%" />
+          </div>
+      </div>
   </ion-content>
-</ion-view>
+</ion-pane>
