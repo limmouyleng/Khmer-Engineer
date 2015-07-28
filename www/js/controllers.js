@@ -1,9 +1,6 @@
 angular.module('xpergineer.controllers', [])
 
-    .controller('MenuCtrl', function ($scope) {
-    })
-
-    .controller('DashCtrl', function ($scope) {
+    .controller('HomeCtrl', function ($scope) {
       $scope.items = [
         {title: "Item 1",
           img: "https://pbs.twimg.com/profile_images/514549811765211136/9SgAuHeY.png",
@@ -31,7 +28,7 @@ angular.module('xpergineer.controllers', [])
       $scope.listCanSwipe = true;
     })
 
-    .controller('ChatsCtrl', function ($scope, Chats) {
+    .controller('SectionsCtrl', function ($scope, Chats) {
       $scope.chats = Chats.all();
       $scope.remove = function (chat) {
         Chats.remove(chat);
@@ -42,7 +39,7 @@ angular.module('xpergineer.controllers', [])
       $scope.chat = Chats.get($stateParams.chatId);
     })
 
-    .controller('AccountCtrl', function ($scope) {
+    .controller('FavoritesCtrl', function ($scope) {
       $scope.settings = {
         enableFriends: true
       };

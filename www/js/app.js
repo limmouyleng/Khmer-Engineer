@@ -15,38 +15,42 @@ angular.module('xpergineer', ['ionic', 'xpergineer.controllers', 'xpergineer.ser
     .config(function ($stateProvider, $urlRouterProvider) {
       $stateProvider
 
-          .state('menu', {
-            url: "/tab",
+          .state('app', {
+            url: "/app",
             abstract: true,
-            templateUrl: "templates/menu.html"
+            templateUrl: 'templates/menu.html'
           })
 
-          .state('tab', {
+          .state('app.tab', {
             url: '/tab',
             abstract: true,
-            templateUrl: 'templates/tabs.html'
-          })
-
-          .state('tab.dash', {
-            url: '/dash',
             views: {
-              'tab-dash': {
-                templateUrl: 'templates/tab-dash.html',
-                controller: 'DashCtrl'
+              'menuContent': {
+                templateUrl: "templates/tabs.html"
               }
             }
           })
 
-          .state('tab.chats', {
-            url: '/chats',
+          .state('app.tab.home', {
+            url: '/home',
             views: {
-              'tab-chats': {
-                templateUrl: 'templates/tab-chats.html',
-                controller: 'ChatsCtrl'
+              'tab-home': {
+                templateUrl: 'templates/tab-home.html',
+                controller: 'HomeCtrl'
               }
             }
           })
-          .state('tab.chat-detail', {
+
+          .state('app.tab.sections', {
+            url: '/sections',
+            views: {
+              'tab-sections': {
+                templateUrl: 'templates/tab-sections.html',
+                controller: 'SectionsCtrl'
+              }
+            }
+          })
+          .state('app.tab.chat-detail', {
             url: '/chats/:chatId',
             views: {
               'tab-chats': {
@@ -56,15 +60,15 @@ angular.module('xpergineer', ['ionic', 'xpergineer.controllers', 'xpergineer.ser
             }
           })
 
-          .state('tab.account', {
-            url: '/account',
+          .state('app.tab.favorites', {
+            url: '/favorites',
             views: {
-              'tab-account': {
-                templateUrl: 'templates/tab-account.html',
-                controller: 'AccountCtrl'
+              'tab-favorites': {
+                templateUrl: 'templates/tab-favorites.html',
+                controller: 'FavoritesCtrl'
               }
             }
           });
 
-      $urlRouterProvider.otherwise('/tab/dash');
+      $urlRouterProvider.otherwise('/app/tab/home');
     });
