@@ -1,27 +1,7 @@
 <ion-pane>
   <ion-content>
-      <div class="row responsive-md">
-          <div class="col col-25">
-              <img ng-src="img/plumbing.png" width="30%" />
-          </div>
-          <div class="col col-25">
-              <img ng-src="img/fire_protection.png" width="30%" />
-          </div>
-          <div class="col col-25">
-              <img ng-src="img/electrical.png" width="30%" />
-          </div>
-          </div>
-
-      <div class="row responsive-md">
-          <div class="col col-25">
-              <img ng-src="img/architecture.png" width="30%" />
-          </div>
-          <div class="col col-25">
-              <img ng-src="img/civil_engineer.png" width="30%" />
-          </div>
-          <div class="col col-25">
-              <img ng-src="img/plumbing.png" width="30%" />
-          </div>
-      </div>
+    <ion-list >
+      <ion-item ng-repeat="item in sections">{{item.name}}</ion-item>
+    </ion-list>
   </ion-content>
 </ion-pane>
