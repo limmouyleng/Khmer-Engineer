@@ -50,6 +50,17 @@ angular.module('xpergineer', ['ionic', 'xpergineer.controllers', 'xpergineer.ser
               }
             }
           })
+
+          .state('app.tab.section-news', {
+            url: '/sections/:sectionId',
+            views: {
+              'tab-sections': {
+                templateUrl: 'templates/section-news.html',
+                controller: 'SectionNewsCtrl'
+              }
+            }
+          })
+
           .state('app.tab.chat-detail', {
             url: '/chats/:chatId',
             views: {

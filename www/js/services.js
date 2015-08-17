@@ -1,15 +1,7 @@
 angular.module('xpergineer.services', [])
 
-.factory('Chats', function() {
-  // Might use a resource here that returns a JSON array
-
-  // Some fake testing data
-  var chats = [{
-    id: 0,
-    name: 'Ben Sparrow',
-    lastText: 'You on your way?',
-    face: 'https://pbs.twimg.com/profile_images/514549811765211136/9SgAuHeY.png'
-  }, {
+.factory('Sections', function() {
+  var sections = [{
     id: 1,
     name: 'Max Lynx',
     lastText: 'Hey, it\'s me',
@@ -33,15 +25,15 @@ angular.module('xpergineer.services', [])
 
   return {
     all: function() {
-      return chats;
+      return sections;
     },
-    remove: function(chat) {
-      chats.splice(chats.indexOf(chat), 1);
+    remove: function(section) {
+      sections.splice(sections.indexOf(section), 1);
     },
-    get: function(chatId) {
-      for (var i = 0; i < chats.length; i++) {
-        if (chats[i].id === parseInt(chatId)) {
-          return chats[i];
+    get: function(sectionId) {
+      for (var i = 0; i < sections.length; i++) {
+        if (sections[i].id === parseInt(sectionId)) {
+          return sections[i];
         }
       }
       return null;
