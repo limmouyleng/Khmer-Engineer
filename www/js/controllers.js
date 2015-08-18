@@ -1,15 +1,19 @@
 angular.module('xpergineer.controllers', [])
 
-    .controller('HomeCtrl', function ($scope, $http) {
-      $http.get('http://192.168.1.124:3001/api/articles').then(function(articles) {
-        $scope.items = articles.data
-      }, function(err) {
-        console.error('ERR', err);     
-      })
+    .controller('HomeCtrl', function ($scope, $stateParams, Articles) {
+      Articles.getArticles().then(function(articles){
+        $scope.articles = articles
+      });
       
       $scope.shouldShowDelete = false;
       $scope.shouldShowReorder = false;
       $scope.listCanSwipe = true;
+    })
+
+    .controller('NewsCtrl', function ($scope, $stateParams, Articles) {
+      Articles.get($stateParams.articleId).then(function(article){
+        $scope.article = article
+      })
     })
 
     .controller('SectionsCtrl', function ($scope) {
@@ -27,19 +31,8 @@ angular.module('xpergineer.controllers', [])
       $scope.section = Sections.get($stateParams.sectionId);
     })
 
-    .controller('ChatDetailCtrl', function ($scope, $stateParams, Chats) {
-      $scope.chat = Chats.get($stateParams.chatId);
-    })
-
     .controller('FavoritesCtrl', function ($scope) {
       $scope.settings = {
         enableFriends: true
       };
     });
-
-
-
-
-
-
-

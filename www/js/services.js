@@ -1,5 +1,22 @@
 angular.module('xpergineer.services', [])
 
+.factory('Articles', function($http){
+  var articles = []
+  return{
+    getArticles: function(){
+      return $http.get('http://192.168.1.2:3000/api/articles').then(function(articles) {
+        articles = articles.data
+        return articles
+      });
+    },
+    get: function(articleId){
+      return $http.get('http://192.168.1.2:3000/api/articles/' + articleId).then(function(article) {
+        return article.data
+      });
+    }
+  }
+})
+
 .factory('Sections', function() {
   var sections = [{
     id: 1,

@@ -41,6 +41,16 @@ angular.module('xpergineer', ['ionic', 'xpergineer.controllers', 'xpergineer.ser
             }
           })
 
+          .state('app.tab.news', {
+            url: '/home/:articleId',
+            views: {
+              'tab-home': {
+                templateUrl: 'templates/news.html',
+                controller: 'NewsCtrl'
+              }
+            }
+          })
+
           .state('app.tab.sections', {
             url: '/sections',
             views: {
@@ -57,16 +67,6 @@ angular.module('xpergineer', ['ionic', 'xpergineer.controllers', 'xpergineer.ser
               'tab-sections': {
                 templateUrl: 'templates/section-news.html',
                 controller: 'SectionNewsCtrl'
-              }
-            }
-          })
-
-          .state('app.tab.chat-detail', {
-            url: '/chats/:chatId',
-            views: {
-              'tab-chats': {
-                templateUrl: 'templates/chat-detail.html',
-                controller: 'ChatDetailCtrl'
               }
             }
           })
