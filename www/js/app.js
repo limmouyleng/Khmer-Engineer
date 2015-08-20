@@ -12,6 +12,10 @@ angular.module('xpergineer', ['ionic', 'xpergineer.controllers', 'xpergineer.ser
       });
     })
 
+    .constant('ApiEndpoint', {
+      url: 'https://boiling-citadel-5471.herokuapp.com/api/'
+    })
+
     .config(function ($stateProvider, $urlRouterProvider) {
       $stateProvider
 

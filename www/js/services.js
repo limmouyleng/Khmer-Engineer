@@ -1,16 +1,16 @@
 angular.module('xpergineer.services', [])
 
-.factory('Articles', function($http){
+.factory('Articles', function($http, ApiEndpoint){
   var articles = []
   return{
     getArticles: function(){
-      return $http.get('http://192.168.1.2:3000/api/articles').then(function(articles) {
+      return $http.get(ApiEndpoint.url + 'articles').then(function(articles) {
         articles = articles.data
         return articles
       });
     },
     get: function(articleId){
-      return $http.get('http://192.168.1.2:3000/api/articles/' + articleId).then(function(article) {
+      return $http.get(ApiEndpoint.url + 'articles/' + articleId).then(function(article) {
         return article.data
       });
     }
