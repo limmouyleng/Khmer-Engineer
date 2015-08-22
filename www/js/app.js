@@ -13,7 +13,7 @@ angular.module('xpergineer', ['ionic', 'xpergineer.controllers', 'xpergineer.ser
     })
 
     .constant('ApiEndpoint', {
-      url: 'https://boiling-citadel-5471.herokuapp.com/api/'
+      url: 'http://192.168.1.124:3000/api/'
     })
 
     .config(function ($stateProvider, $urlRouterProvider) {
@@ -45,12 +45,12 @@ angular.module('xpergineer', ['ionic', 'xpergineer.controllers', 'xpergineer.ser
             }
           })
 
-          .state('app.tab.news', {
+          .state('app.tab.article_show', {
             url: '/home/:articleId',
             views: {
               'tab-home': {
-                templateUrl: 'templates/news.html',
-                controller: 'NewsCtrl'
+                templateUrl: 'templates/articles/show.html',
+                controller: 'ArticleShowCtrl'
               }
             }
           })
@@ -65,12 +65,22 @@ angular.module('xpergineer', ['ionic', 'xpergineer.controllers', 'xpergineer.ser
             }
           })
 
-          .state('app.tab.section-news', {
+          .state('app.tab.section_articles', {
             url: '/sections/:sectionId',
             views: {
               'tab-sections': {
-                templateUrl: 'templates/section-news.html',
-                controller: 'SectionNewsCtrl'
+                templateUrl: 'templates/sections/articles.html',
+                controller: 'SectionArticlesCtrl'
+              }
+            }
+          })
+
+          .state('app.tab.section_article_show', {
+            url: '/sections/:sectionId/:articleId',
+            views: {
+              'tab-sections': {
+                templateUrl: 'templates/sections/show.html',
+                controller: 'SectionArticleShowCtrl'
               }
             }
           })

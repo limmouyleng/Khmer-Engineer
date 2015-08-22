@@ -1,7 +1,7 @@
 angular.module('xpergineer.controllers', [])
 
     .controller('HomeCtrl', function ($scope, $stateParams, Articles) {
-      Articles.getArticles().then(function(articles){
+      Articles.all().then(function(articles){
         $scope.articles = articles
       });
       
@@ -10,7 +10,7 @@ angular.module('xpergineer.controllers', [])
       $scope.listCanSwipe = true;
     })
 
-    .controller('NewsCtrl', function ($scope, $stateParams, Articles) {
+    .controller('ArticleShowCtrl', function ($scope, $stateParams, Articles) {
       Articles.get($stateParams.articleId).then(function(article){
         $scope.article = article
       })
@@ -24,11 +24,20 @@ angular.module('xpergineer.controllers', [])
         {name: "Architecture" , id: 4},
         {name: "Civil Engineer" , id: 5},
         {name: "Mechanical" , id: 6},
+        {name: "Computer Science" , id: 7}
       ]
     })
 
-    .controller('SectionNewsCtrl', function ($scope, $stateParams, Sections) {
-      $scope.section = Sections.get($stateParams.sectionId);
+    .controller('SectionArticlesCtrl', function ($scope, $stateParams, Sections) {
+      Sections.get($stateParams.sectionId).then(function(articles){
+        $scope.articles = articles
+      })
+    })
+
+    .controller('SectionArticleShowCtrl', function ($scope, $stateParams, Articles) {
+      Articles.get($stateParams.articleId).then(function(article){
+        $scope.article = article
+      })
     })
 
     .controller('FavoritesCtrl', function ($scope) {

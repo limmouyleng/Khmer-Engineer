@@ -1,7 +1,7 @@
 <ion-view view-title="Xpergineer">
   <ion-content class="padding">
     <ion-list >
-     <ion-item ng-repeat="item in articles" class="item-thumbnail-left item-icon-right" href="#/app/tab/home/{{item.id}}">
+     <ion-item ng-repeat="item in articles" class="item-thumbnail-left item-icon-right" href="#/app/tab/sections/{{item.section}}/{{item.id}}">
       <img ng-src="https://pbs.twimg.com/profile_images/514549811765211136/9SgAuHeY.png">
       <h2>{{item.title}}</h2>
       <p>{{item.description}}</p>
