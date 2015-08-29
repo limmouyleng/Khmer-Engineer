@@ -5,9 +5,6 @@ angular.module('xpergineer.controllers', [])
         $scope.articles = articles
       });
       
-      $scope.shouldShowDelete = false;
-      $scope.shouldShowReorder = false;
-      $scope.listCanSwipe = true;
     })
 
     .controller('ArticleShowCtrl', function ($scope, $stateParams, Articles) {

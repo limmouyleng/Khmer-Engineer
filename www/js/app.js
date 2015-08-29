@@ -19,23 +19,13 @@ angular.module('xpergineer', ['ionic', 'xpergineer.controllers', 'xpergineer.ser
     .config(function ($stateProvider, $urlRouterProvider) {
       $stateProvider
 
-          .state('app', {
-            url: "/app",
+          .state('tab', {
+            url: "/tab",
             abstract: true,
-            templateUrl: 'templates/menu.html'
+            templateUrl: 'templates/tabs.html'
           })
 
-          .state('app.tab', {
-            url: '/tab',
-            abstract: true,
-            views: {
-              'menuContent': {
-                templateUrl: "templates/tabs.html"
-              }
-            }
-          })
-
-          .state('app.tab.home', {
+          .state('tab.home', {
             url: '/home',
             views: {
               'tab-home': {
@@ -45,7 +35,7 @@ angular.module('xpergineer', ['ionic', 'xpergineer.controllers', 'xpergineer.ser
             }
           })
 
-          .state('app.tab.article_show', {
+          .state('tab.article_show', {
             url: '/home/:articleId',
             views: {
               'tab-home': {
@@ -55,7 +45,7 @@ angular.module('xpergineer', ['ionic', 'xpergineer.controllers', 'xpergineer.ser
             }
           })
 
-          .state('app.tab.sections', {
+          .state('tab.sections', {
             url: '/sections',
             views: {
               'tab-sections': {
@@ -65,7 +55,7 @@ angular.module('xpergineer', ['ionic', 'xpergineer.controllers', 'xpergineer.ser
             }
           })
 
-          .state('app.tab.section_articles', {
+          .state('tab.section_articles', {
             url: '/sections/:sectionId',
             views: {
               'tab-sections': {
@@ -75,7 +65,7 @@ angular.module('xpergineer', ['ionic', 'xpergineer.controllers', 'xpergineer.ser
             }
           })
 
-          .state('app.tab.section_article_show', {
+          .state('tab.section_article_show', {
             url: '/sections/:sectionId/:articleId',
             views: {
               'tab-sections': {
@@ -85,7 +75,7 @@ angular.module('xpergineer', ['ionic', 'xpergineer.controllers', 'xpergineer.ser
             }
           })
 
-          .state('app.tab.favorites', {
+          .state('tab.favorites', {
             url: '/favorites',
             views: {
               'tab-favorites': {
@@ -95,5 +85,5 @@ angular.module('xpergineer', ['ionic', 'xpergineer.controllers', 'xpergineer.ser
             }
           });
 
-      $urlRouterProvider.otherwise('/app/tab/home');
+      $urlRouterProvider.otherwise('/tab/home');
     });
