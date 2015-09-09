@@ -1,18 +1,18 @@
-<ion-view hide-nav-bar='true'>
+<ion-view hide-nav-bar='true'  hide-tabs='false'>
   <ion-content class="padding">
-    <ion-list >
-     <ion-item ng-repeat="item in articles" class="item-thumbnail-left item-icon-right" href="#/tab/home/{{item.id}}">
-      <img ng-src="https://pbs.twimg.com/profile_images/514549811765211136/9SgAuHeY.png">
-      <h2>{{item.title}}</h2>
-      <p>{{item.description}}</p>
-      <i class="icon ion-chevron-right icon-accessory"></i>
-      <ion-option-button class="button-positive icon ion-share"
-                         ng-click="share(item)">
-      </ion-option-button>
-      <ion-option-button class="button-light icon ion-heart"
-                         ng-click="farvorite(item)">
-      </ion-option-button>
-     </ion-item>
+    <ion-list class="list card">
+      <ion-item ng-repeat="item in articles" class="list card" href="#/tab/home/{{item.id}}">
+        <div class="item item-image" style="height: 160px;" ><img ng-src="https://pbs.twimg.com/profile_images/514549811765211136/9SgAuHeY.png"></div>
+        <div class="item">
+          {{item.title}}
+        </div>
+        <ion-option-button class="button-positive icon ion-share"
+                           ng-click="share(item)">
+        </ion-option-button>
+        <ion-option-button class="button-light icon ion-heart"
+                           ng-click="farvorite(item)">
+        </ion-option-button>
+      </ion-item>
     </ion-list>
   </ion-content>
- </ion-view>
+</ion-view>
