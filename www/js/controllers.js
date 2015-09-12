@@ -1,14 +1,16 @@
 angular.module('xpergineer.controllers', [])
 
-    .controller('HomeCtrl', function ($scope, $stateParams, Articles) {
+    .controller('HomeCtrl', function ($scope, $stateParams, Articles, ApiEndpoint) {
       Articles.all().then(function(articles){
+        $scope.server = ApiEndpoint.server
         $scope.articles = articles
       });
       
     })
 
-    .controller('ArticleShowCtrl', function ($scope, $stateParams, Articles) {
+    .controller('ArticleShowCtrl', function ($scope, $stateParams, Articles, ApiEndpoint) {
       Articles.get($stateParams.articleId).then(function(article){
+        $scope.server = ApiEndpoint.server
         $scope.article = article
       })
     })
@@ -25,14 +27,16 @@ angular.module('xpergineer.controllers', [])
       ]
     })
 
-    .controller('SectionArticlesCtrl', function ($scope, $stateParams, Sections) {
+    .controller('SectionArticlesCtrl', function ($scope, $stateParams, Sections, ApiEndpoint) {
       Sections.get($stateParams.sectionId).then(function(articles){
+        $scope.server = ApiEndpoint.server
         $scope.articles = articles
       })
     })
 
-    .controller('SectionArticleShowCtrl', function ($scope, $stateParams, Articles) {
+    .controller('SectionArticleShowCtrl', function ($scope, $stateParams, Articles, ApiEndpoint) {
       Articles.get($stateParams.articleId).then(function(article){
+        $scope.server = ApiEndpoint.server
         $scope.article = article
       })
     })

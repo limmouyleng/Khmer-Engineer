@@ -13,6 +13,7 @@ angular.module('xpergineer', ['ionic', 'xpergineer.controllers', 'xpergineer.ser
     })
 
     .constant('ApiEndpoint', {
+      server: 'http://192.168.1.104:3000',
       url: 'http://192.168.1.104:3000/api/'
     })
 
@@ -39,7 +40,7 @@ angular.module('xpergineer', ['ionic', 'xpergineer.controllers', 'xpergineer.ser
             url: '/home/:articleId',
             views: {
               'tab-home': {
-                templateUrl: 'templates/articles/show.html',
+                templateUrl: 'templates/article-detail.html',
                 controller: 'ArticleShowCtrl'
               }
             }
@@ -69,7 +70,7 @@ angular.module('xpergineer', ['ionic', 'xpergineer.controllers', 'xpergineer.ser
             url: '/sections/:sectionId/:articleId',
             views: {
               'tab-sections': {
-                templateUrl: 'templates/sections/show.html',
+                templateUrl: 'templates/article-detail.html',
                 controller: 'SectionArticleShowCtrl'
               }
             }

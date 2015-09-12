@@ -2,7 +2,7 @@
   <ion-content class="padding">
     <ion-list class="list card">
       <ion-item ng-repeat="item in articles" class="list card" href="#/tab/home/{{item.id}}">
-        <div class="item item-image" style="height: 160px;" ><img ng-src="https://pbs.twimg.com/profile_images/514549811765211136/9SgAuHeY.png"></div>
+        <div class="item item-image" style="height: 160px;" ><img ng-src="{{server}}{{item.photo}}"></div>
         <div class="item">
           {{item.title}}
         </div>
