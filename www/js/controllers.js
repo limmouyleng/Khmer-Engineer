@@ -1,10 +1,20 @@
 angular.module('xpergineer.controllers', [])
-
     .controller('HomeCtrl', function ($scope, $stateParams, Articles, ApiEndpoint) {
       Articles.all().then(function(articles){
         $scope.server = ApiEndpoint.server
         $scope.articles = articles
       });
+
+      $scope.refreshNews = function(){
+        Articles.all()
+        .then(function(articles){
+          $scope.server = ApiEndpoint.server
+          $scope.articles = articles
+        })
+        .finally(function(){
+          $scope.$broadcast('scroll.refreshComplete')
+        })
+      }
       
     })
 

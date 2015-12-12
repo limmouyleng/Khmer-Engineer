@@ -1,4 +1,4 @@
-angular.module('xpergineer', ['ionic', 'xpergineer.controllers', 'xpergineer.services', 'xpergineer.directives'])
+angular.module('xpergineer', ['ionic', 'ionic-material', 'xpergineer.controllers', 'xpergineer.services'])
 
     .run(function ($ionicPlatform) {
       $ionicPlatform.ready(function () {
@@ -13,8 +13,8 @@ angular.module('xpergineer', ['ionic', 'xpergineer.controllers', 'xpergineer.ser
     })
 
     .constant('ApiEndpoint', {
-      server: 'http://192.168.1.104:3000',
-      url: 'http://192.168.1.104:3000/api/'
+      server: 'http://192.168.1.127:3000/',
+      url: 'http://192.168.1.127:3000/api/'
     })
 
     .config(function ($stateProvider, $urlRouterProvider) {
